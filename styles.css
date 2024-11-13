@@ -3,6 +3,26 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#search-bar {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#cart {
+    text-align: left;
 }
 
 .slideshow {
@@ -20,19 +40,16 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-.search-container {
-    margin-top: 20px;
-}
-
-.search-container input {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
-}
-
 .info {
     margin: 20px 0;
-    font-size: 18px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.button-container {
+    margin-top: 20px;
 }
 
 .button-container button {
@@ -40,8 +57,4 @@ body {
     margin: 5px;
     font-size: 16px;
     cursor: pointer;
-}
-
-#cart {
-    margin-top: 20px;
 }

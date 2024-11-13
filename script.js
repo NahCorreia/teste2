@@ -19,8 +19,8 @@ document.getElementById("search-bar").addEventListener("input", function() {
     let results = document.getElementById("cart-items");
     results.innerHTML = ''; // Limpa os resultados anteriores
 
-    // Exemplo: Pesquisa em produtos fixos
-    const produtos = ["Combo 1", "Livro A", "Milkshake de Chocolate"];
+    // Exemplo de produtos fixos
+    const produtos = ["Milkshake de Chocolate", "Livro Aventura", "Combo 1"];
     produtos.forEach(produto => {
         if (produto.toLowerCase().includes(query)) {
             let item = document.createElement("li");
@@ -29,6 +29,7 @@ document.getElementById("search-bar").addEventListener("input", function() {
         }
     });
 });
+
 function addToCart(productName) {
     let cartItems = document.getElementById("cart-items");
     let item = document.createElement("li");

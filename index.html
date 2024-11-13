@@ -8,36 +8,35 @@
 </head>
 <body>
 
-    <!-- Seção do Slideshow -->
+    <!-- Barra de Pesquisa e Carrinho -->
+    <div class="header">
+        <input type="text" id="search-bar" placeholder="Buscar produto...">
+        <div id="cart">
+            <h2>Carrinho</h2>
+            <ul id="cart-items"></ul>
+        </div>
+    </div>
+
+    <!-- Slideshow -->
     <div class="slideshow">
-        <img src="foto.jpg" class="slide" alt="Imagem 1">
-        <img src="Urso.Bart.jpg" class="slide" alt="Imagem 2">
+        <img src="img1.jpg" class="slide" alt="Imagem 1">
+        <img src="img2.jpg" class="slide" alt="Imagem 2">
         <img src="img3.jpg" class="slide" alt="Imagem 3">
     </div>
 
-    <!-- Barra de Pesquisa -->
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Buscar produto...">
-    </div>
-
-    <!-- Horário, Local e Slogan -->
+    <!-- Informações de Loja -->
     <div class="info">
-        <p>Horário de funcionamento: 08:00 - 22:00</p>
+        <img src="logo.png" alt="Logo" class="logo">
         <p>Local: Rua Exemplo, 123 - Centro</p>
+        <p>Data: 13 de Novembro de 2024</p>
         <p>Slogan: "A melhor loja para você!"</p>
     </div>
 
     <!-- Botões de Navegação -->
     <div class="button-container">
-        <button onclick="location.href='combos.html'">Combos</button>
-        <button onclick="location.href='livros.html'">Livros</button>
         <button onclick="location.href='milkshakes.html'">Milkshakes</button>
-    </div>
-
-    <!-- Carrinho -->
-    <div id="cart">
-        <h2>Carrinho de Compras</h2>
-        <ul id="cart-items"></ul>
+        <button onclick="location.href='livros.html'">Livros</button>
+        <button onclick="location.href='combos.html'">Combos</button>
     </div>
 
     <script src="script.js"></script>
