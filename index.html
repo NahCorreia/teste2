@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Loja - Página Inicial</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Barra de Pesquisa e Carrinho -->
+    <header>
+        <div class="navbar">
+            <input type="text" placeholder="Buscar produtos..." id="searchBar">
+            <a href="carrinho.html" id="cartLink">Carrinho</a>
+        </div>
+    </header>
 
-  <!-- Cabeçalho com Carrossel de Imagens -->
-  <header>
-    <h1>Minha Loja</h1>
+    <!-- Carrossel de Imagens -->
     <div class="carousel">
-      <img src="img1.jpg" class="carousel-image active" alt="Imagem 1">
-      <img src="img2.jpg" class="carousel-image" alt="Imagem 2">
-      <img src="img3.jpg" class="carousel-image" alt="Imagem 3">
+        <img src="img1.jpg" class="carousel-image" alt="Imagem 1">
+        <img src="img2.jpg" class="carousel-image" alt="Imagem 2">
+        <img src="img3.jpg" class="carousel-image" alt="Imagem 3">
     </div>
-  </header>
 
-  <!-- Informações de Local e Horário -->
-  <section id="info">
-    <p>Localização: Rua Principal, 123, Centro</p>
-    <p>Horário de funcionamento: Seg a Sex, das 9h às 18h</p>
-    <p>Slogan: "O melhor para você!"</p>
-  </section>
+    <!-- Informações da Loja -->
+    <section class="store-info">
+        <h1>Bem-vindo à nossa Loja</h1>
+        <p>Conheça nossos produtos e ofertas exclusivas.</p>
+    </section>
 
-  <!-- Botões para Páginas de Produtos -->
-  <section id="product-buttons">
-    <button onclick="window.location.href='produtos.html'">Produtos Categoria 1</button>
-    <button onclick="window.location.href='produtos.html'">Produtos Categoria 2</button>
-    <button onclick="window.location.href='produtos.html'">Produtos Categoria 3</button>
-  </section>
+    <!-- Botões para páginas de produtos -->
+    <section class="product-buttons">
+        <a href="produtos.html?categoria=1" class="btn">Categoria 1</a>
+        <a href="produtos.html?categoria=2" class="btn">Categoria 2</a>
+        <a href="produtos.html?categoria=3" class="btn">Categoria 3</a>
+    </section>
 
-  <footer>
-    <p>Minha Loja - Todos os direitos reservados</p>
-  </footer>
-
-  <script src="scripts.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
