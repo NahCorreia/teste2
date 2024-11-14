@@ -21,7 +21,7 @@ let cart = [];
 
 function addToCart(productName) {
   cart.push(productName);
-  alert(${productName} foi adicionado ao carrinho.);
+  alert('${productName} foi adicionado ao carrinho.');
 }
 
 // Exibir o conteúdo do carrinho
@@ -29,6 +29,6 @@ document.getElementById("cart-btn").addEventListener("click", () => {
   if (cart.length === 0) {
     alert("O carrinho está vazio.");
   } else {
-    alert(Produtos no carrinho: \n- ${cart.join('\n- ')});
+    alert('Produtos no carrinho: \n- ${cart.join('\n- ')}');
   }
 });
