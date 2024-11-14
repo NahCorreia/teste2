@@ -1,60 +1,69 @@
-/* Estilos básicos */
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-}
-
-.header {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-#search-bar {
-    width: 60%;
     padding: 10px;
-    font-size: 16px;
-}
-
-#cart {
-    text-align: left;
-}
-
-.slideshow {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #search-bar {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
     position: relative;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.slide {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .carousel-image {
+    display: none;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.info {
-    margin: 20px 0;
-}
-
-.logo {
-    width: 150px;
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-.button-container button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
+  }
+  
+  .carousel-image.active {
+    display: block;
+  }
+  
+  #info, footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+  }
+  
+  #products {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 8px 12px;
     cursor: pointer;
-}
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }

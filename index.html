@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Loja</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Loja</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Barra de Pesquisa e Carrinho -->
-    <div class="header">
-        <input type="text" id="search-bar" placeholder="Buscar produto...">
-        <div id="cart">
-            <h2>Carrinho</h2>
-            <ul id="cart-items"></ul>
-        </div>
-    </div>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Minha Loja</h1>
+    <input type="text" id="search-bar" placeholder="Buscar produtos..." onkeyup="searchProducts()">
+    <button id="cart-btn">Carrinho</button>
+  </header>
 
-    <!-- Slideshow -->
-    <div class="slideshow">
-        <img src="img1.jpg" class="slide" alt="Imagem 1">
-        <img src="img2.jpg" class="slide" alt="Imagem 2">
-        <img src="img3.jpg" class="slide" alt="Imagem 3">
-    </div>
+  <!-- Carrossel de Imagens -->
+  <div class="carousel">
+    <img src="img1.jpg" class="carousel-image active" alt="Imagem 1">
+    <img src="img2.jpg" class="carousel-image" alt="Imagem 2">
+    <img src="img3.jpg" class="carousel-image" alt="Imagem 3">
+  </div>
 
-    <!-- Informações de Loja -->
-    <div class="info">
-        <img src="logo.png" alt="Logo" class="logo">
-        <p>Local: Rua Exemplo, 123 - Centro</p>
-        <p>Data: 13 de Novembro de 2024</p>
-        <p>Slogan: "A melhor loja para você!"</p>
-    </div>
+  <!-- Informações de Local e Horário -->
+  <section id="info">
+    <p>Localização: Rua Principal, 123, Centro</p>
+    <p>Horário de atendimento: Seg a Sex, das 9h às 18h</p>
+    <p>Slogan: "O melhor para você!"</p>
+  </section>
 
-    <!-- Botões de Navegação -->
-    <div class="button-container">
-        <button onclick="location.href='milkshakes.html'">Milkshakes</button>
-        <button onclick="location.href='livros.html'">Livros</button>
-        <button onclick="location.href='combos.html'">Combos</button>
+  <!-- Lista de Produtos -->
+  <section id="products">
+    <div class="product" data-name="Produto A">
+      <h2 class="product-name">Produto A</h2>
+      <p>Preço: R$ 50,00</p>
+      <button onclick="addToCart('Produto A')">Adicionar ao Carrinho</button>
     </div>
+    <div class="product" data-name="Produto B">
+      <h2 class="product-name">Produto B</h2>
+      <p>Preço: R$ 75,00</p>
+      <button onclick="addToCart('Produto B')">Adicionar ao Carrinho</button>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Rodapé -->
+  <footer>
+    <p>Localização: Rua Principal, 123, Centro</p>
+    <p>Horário de atendimento: Seg a Sex, das 9h às 18h</p>
+    <p>Slogan: "O melhor para você!"</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
