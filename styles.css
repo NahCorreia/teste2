@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -7,52 +6,42 @@
 
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
   background-color: #333;
   color: #fff;
+  padding: 10px;
 }
 
-#search-bar {
-  padding: 5px;
-  width: 200px;
+h1 {
+  margin-bottom: 10px;
 }
 
 .carousel {
-  display: flex;
-  overflow: hidden;
   position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.carousel-image {
+.carousel img {
+  width: 100%;
   display: none;
-  width: 100%;
 }
 
-.carousel-image.active {
+.carousel img.active {
   display: block;
 }
 
-#info, footer {
-  text-align: center;
+#info {
+  margin: 20px 0;
   padding: 10px;
   background-color: #f4f4f4;
 }
 
-#product-buttons {
-  text-align: center;
-  padding: 20px;
-}
-
 #product-buttons button {
-  margin: 5px;
+  margin: 10px;
   padding: 10px 20px;
   background-color: #333;
   color: #fff;
@@ -61,15 +50,13 @@ header {
   cursor: pointer;
 }
 
-button {
-  padding: 8px 12px;
-  cursor: pointer;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+#product-buttons button:hover {
+  background-color: #555;
 }
 
-button:hover {
-  background-color: #555;
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
 }

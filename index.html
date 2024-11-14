@@ -8,39 +8,32 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
+  <!-- Cabeçalho com Carrossel de Imagens -->
   <header>
     <h1>Minha Loja</h1>
-    <input type="text" id="search-bar" placeholder="Buscar produtos..." onkeyup="searchProducts()">
-    <button id="cart-btn">Carrinho</button>
+    <div class="carousel">
+      <img src="img1.jpg" class="carousel-image active" alt="Imagem 1">
+      <img src="img2.jpg" class="carousel-image" alt="Imagem 2">
+      <img src="img3.jpg" class="carousel-image" alt="Imagem 3">
+    </div>
   </header>
-
-  <!-- Carrossel de Imagens -->
-  <div class="carousel">
-    <img src="img1.jpg" class="carousel-image active" alt="Imagem 1">
-    <img src="img2.jpg" class="carousel-image" alt="Imagem 2">
-    <img src="img3.jpg" class="carousel-image" alt="Imagem 3">
-  </div>
 
   <!-- Informações de Local e Horário -->
   <section id="info">
     <p>Localização: Rua Principal, 123, Centro</p>
-    <p>Horário de atendimento: Seg a Sex, das 9h às 18h</p>
+    <p>Horário de funcionamento: Seg a Sex, das 9h às 18h</p>
     <p>Slogan: "O melhor para você!"</p>
   </section>
 
-  <!-- Botões para Categorias de Produtos -->
+  <!-- Botões para Páginas de Produtos -->
   <section id="product-buttons">
-    <button onclick="window.location.href='produtos1.html'">Produtos Categoria 1</button>
-    <button onclick="window.location.href='produtos2.html'">Produtos Categoria 2</button>
-    <button onclick="window.location.href='produtos3.html'">Produtos Categoria 3</button>
+    <button onclick="window.location.href='produtos.html'">Produtos Categoria 1</button>
+    <button onclick="window.location.href='produtos.html'">Produtos Categoria 2</button>
+    <button onclick="window.location.href='produtos.html'">Produtos Categoria 3</button>
   </section>
 
-  <!-- Rodapé -->
   <footer>
-    <p>Localização: Rua Principal, 123, Centro</p>
-    <p>Horário de atendimento: Seg a Sex, das 9h às 18h</p>
-    <p>Slogan: "O melhor para você!"</p>
+    <p>Minha Loja - Todos os direitos reservados</p>
   </footer>
 
   <script src="scripts.js"></script>
