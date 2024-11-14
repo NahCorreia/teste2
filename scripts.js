@@ -10,15 +10,10 @@ function switchImage() {
 
 setInterval(switchImage, 3000); // Troca de imagem a cada 3 segundos
 
-// Função de busca de produtos
+// Função de busca de produtos (placeholder para funcionalidade futura)
 function searchProducts() {
   const query = document.getElementById("search-bar").value.toLowerCase();
-  const products = document.querySelectorAll(".product");
-  
-  products.forEach(product => {
-    const name = product.getAttribute("data-name").toLowerCase();
-    product.style.display = name.includes(query) ? "block" : "none";
-  });
+  // Lógica de busca pode ser adicionada aqui, dependendo de como você quer implementar
 }
 
 // Gerenciamento do carrinho

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Categoria 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Minha Loja - Categoria 1</h1>
+    <button onclick="location.href='index.html'">Voltar à Página Inicial</button>
+  </header>
+
+  <section id="products">
+    <div class="product" data-name="Produto A">
+      <h2 class="product-name">Produto A</h2>
+      <p>Preço: R$ 50,00</p>
+      <button onclick="addToCart('Produto A')">Adicionar ao Carrinho</button>
+    </div>
+    <div class="product" data-name="Produto B">
+      <h2 class="product-name">Produto B</h2>
+      <p>Preço: R$ 75,00</p>
+      <button onclick="addToCart('Produto B')">Adicionar ao Carrinho</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Localização: Rua Principal, 123, Centro</p>
+    <p>Horário de atendimento: Seg a Sex, das 9h às 18h</p>
+    <p>Slogan: "O melhor para você!"</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
