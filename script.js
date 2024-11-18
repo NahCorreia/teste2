@@ -31,7 +31,7 @@ function adicionarAoCarrinho(id) {
   if (produto) {
     carrinho.push(produto); // Adiciona o produto ao carrinho
     salvarCarrinho();
-    alert('${produto.nome} foi adicionado ao carrinho!');
+    alert('{livro} foi adicionado ao carrinho!');
   } else {
     alert('Produto não encontrado!');
   }
