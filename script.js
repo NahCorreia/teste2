@@ -54,7 +54,7 @@ function exibirCarrinho() {
 
   carrinho.forEach((produto, index) => {
     const item = document.createElement('li');
-    item.textContent = '${produto.nome} - R$ ${produto.preco.toFixed(2)}';
+    item.textContent = '${livro} - R$ ${livro)}';
     
     // Botão para remover item do carrinho
     const botaoRemover = document.createElement('button');
@@ -67,7 +67,7 @@ function exibirCarrinho() {
     total += produto.preco; // Soma o preço ao total
   });
 
-  totalElement.textContent = 'Total: R$ ${total.toFixed(2)}';
+  totalElement.textContent = 'Total: R$ ${total.livro)}';
 }
 
 // Remove um produto do carrinho
