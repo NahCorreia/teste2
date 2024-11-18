@@ -61,7 +61,7 @@ body {
   }
   
   button {
-    background-color: #EB8D96;
+    background-color: #ec7480;
     color: white;
     border: none;
     padding: 10px;
@@ -70,7 +70,7 @@ body {
   }
   
   button:hover {
-    background-color: #FFC0C7;
+    background-color: #ffa1ac;
   }
   
   footer {
