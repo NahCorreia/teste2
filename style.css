@@ -79,3 +79,10 @@ body {
     color: white;
     padding: 10px 0;
   }
+
+  #produtos h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #333;
+  }
