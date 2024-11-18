@@ -12,22 +12,52 @@ body {
     text-align: center;
   }
   
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
   main {
-    display: flex;
-    justify-content: space-between;
     padding: 20px;
   }
   
-  #produtos, #carrinho {
-    width: 45%;
-    background: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  #slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slide {
+    display: none;
+  }
+  
+  .slide.ativo {
+    display: block;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
   }
   
   .produto {
     margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .produto img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
   }
   
   button {
@@ -41,4 +71,11 @@ body {
   
   button:hover {
     background-color: #218838;
+  }
+  
+  footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px 0;
   }

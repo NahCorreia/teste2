@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Minha Loja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Produtos</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="carrinho.html">Ir para o Carrinho</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="produtos">
+      <h2>Lista de Produtos</h2>
+      <div class="produto" data-id="1" data-nome="Produto 1" data-preco="100">
+        <img src="imagens/produto1.jpg" alt="Produto 1">
+        <h3>Produto 1</h3>
+        <p>Preço: R$ 100,00</p>
+        <button onclick="adicionarAoCarrinho(1)">Adicionar ao Carrinho</button>
+      </div>
+      <div class="produto" data-id="2" data-nome="Produto 2" data-preco="200">
+        <img src="imagens/produto2.jpg" alt="Produto 2">
+        <h3>Produto 2</h3>
+        <p>Preço: R$ 200,00</p>
+        <button onclick="adicionarAoCarrinho(2)">Adicionar ao Carrinho</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Minha Loja Simples</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

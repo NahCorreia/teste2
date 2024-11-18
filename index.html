@@ -3,37 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Simples</title>
+  <title>Minha Loja Simples</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Minha Loja Simples</h1>
+    <h1>Bem-vindo à Minha Loja</h1>
+    <nav>
+      <a href="produtos.html">Ver Produtos</a>
+      <a href="carrinho.html">Ir para o Carrinho</a>
+    </nav>
   </header>
 
   <main>
-    <section id="produtos">
-      <h2>Produtos</h2>
-      <div class="produto" data-id="1" data-nome="Produto 1" data-preco="100">
-        <h3>Produto 1</h3>
-        <p>Preço: R$ 100,00</p>
-        <button onclick="adicionarAoCarrinho(1)">Adicionar ao Carrinho</button>
+    <!-- Slideshow -->
+    <section id="slideshow">
+      <div class="slide ativo">
+        <img src="imagens/slide1.jpg" alt="Slide 1">
       </div>
-      <div class="produto" data-id="2" data-nome="Produto 2" data-preco="200">
-        <h3>Produto 2</h3>
-        <p>Preço: R$ 200,00</p>
-        <button onclick="adicionarAoCarrinho(2)">Adicionar ao Carrinho</button>
+      <div class="slide">
+        <img src="imagens/slide2.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="imagens/slide3.jpg" alt="Slide 3">
       </div>
     </section>
 
-    <section id="carrinho">
-      <h2>Carrinho</h2>
-      <ul id="itens-carrinho"></ul>
-      <p id="total">Total: R$ 0,00</p>
-      <button id="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>Bem-vindo à nossa loja! Aqui você encontra produtos incríveis com os melhores preços. Navegue pelos nossos produtos e aproveite!</p>
     </section>
   </main>
 
+  <footer>
+    <p>&copy; 2024 Minha Loja Simples</p>
+  </footer>
   <script src="script.js"></script>
 </body>
-</html>s
+</html>

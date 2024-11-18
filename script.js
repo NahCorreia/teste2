@@ -1,68 +1,96 @@
-// Produtos disponíveis
+// Slideshow
+let slideIndex = 0;
+
+function mostrarSlides() {
+  const slides = document.querySelectorAll('.slide');
+  
+  slides.forEach((slide, index) => {
+    slide.classList.remove('ativo'); // Remove a classe "ativo" de todos os slides
+    if (index === slideIndex) {
+      slide.classList.add('ativo'); // Adiciona a classe "ativo" ao slide atual
+    }
+  });
+
+  slideIndex = (slideIndex + 1) % slides.length; // Alterna entre os slides
+}
+
+// Inicia o slideshow
+setInterval(mostrarSlides, 3000); // Troca de imagem a cada 3 segundos
+
+// Produtos e Carrinho
 const produtos = [
-    { id: 1, nome: 'Produto 1', preco: 100 },
-    { id: 2, nome: 'Produto 2', preco: 200 },
-  ];
-  
-  // Carrinho de compras
-  let carrinho = [];
-  
-  // Função para adicionar um produto ao carrinho
-  function adicionarAoCarrinho(id) {
-    const produto = produtos.find((p) => p.id === id);
-  
-    if (produto) {
-      carrinho.push(produto);
-      atualizarCarrinho();
-      alert(${produto.nome} foi adicionado ao carrinho!);
-    }
+  { id: 1, nome: 'Produto 1', preco: 100 },
+  { id: 2, nome: 'Produto 2', preco: 200 },
+];
+
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+// Função para adicionar produtos ao carrinho
+function adicionarAoCarrinho(id) {
+  const produto = produtos.find((p) => p.id === id);
+  if (produto) {
+    carrinho.push(produto); // Adiciona o produto ao carrinho
+    salvarCarrinho();
+    alert('${produto.nome} foi adicionado ao carrinho!');
+  } else {
+    alert('Produto não encontrado!');
   }
-  
-  // Atualizar a exibição do carrinho
-  function atualizarCarrinho() {
-    const listaCarrinho = document.getElementById('itens-carrinho');
-    const totalDisplay = document.getElementById('total');
-  
-    // Limpa os itens do carrinho exibidos
-    listaCarrinho.innerHTML = '';
-  
-    // Adiciona os itens ao carrinho
-    let total = 0;
-    carrinho.forEach((item, index) => {
-      total += item.preco;
-  
-      const li = document.createElement('li');
-      li.textContent = `${item.nome} - R$ ${item.preco},00 `;
-      
-      // Botão para remover item do carrinho
-      const btnRemover = document.createElement('button');
-      btnRemover.textContent = 'Remover';
-      btnRemover.style.marginLeft = '10px';
-      btnRemover.onclick = () => removerDoCarrinho(index);
-      li.appendChild(btnRemover);
-  
-      listaCarrinho.appendChild(li);
-    });
-  
-    // Atualiza o total
-    totalDisplay.textContent = Total: R$ ${total},00;
+}
+
+// Salva o carrinho no localStorage
+function salvarCarrinho() {
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+// Exibe o carrinho na página do carrinho
+function exibirCarrinho() {
+  const listaCarrinho = document.getElementById('itens-carrinho');
+  const totalElement = document.getElementById('total');
+
+  // Limpa a lista atual
+  listaCarrinho.innerHTML = '';
+
+  let total = 0;
+
+  carrinho.forEach((produto, index) => {
+    const item = document.createElement('li');
+    item.textContent = '${produto.nome} - R$ ${produto.preco.toFixed(2)}';
+    
+    // Botão para remover item do carrinho
+    const botaoRemover = document.createElement('button');
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.onclick = () => removerDoCarrinho(index);
+
+    item.appendChild(botaoRemover);
+    listaCarrinho.appendChild(item);
+
+    total += produto.preco; // Soma o preço ao total
+  });
+
+  totalElement.textContent = 'Total: R$ ${total.toFixed(2)}';
+}
+
+// Remove um produto do carrinho
+function removerDoCarrinho(index) {
+  carrinho.splice(index, 1); // Remove o item do carrinho
+  salvarCarrinho();
+  exibirCarrinho();
+}
+
+// Finaliza a compra
+function finalizarCompra() {
+  if (carrinho.length === 0) {
+    alert('Seu carrinho está vazio!');
+    return;
   }
-  
-  // Remover item do carrinho
-  function removerDoCarrinho(index) {
-    carrinho.splice(index, 1);
-    atualizarCarrinho();
-  }
-  
-  // Finalizar compra
-  function finalizarCompra() {
-    if (carrinho.length === 0) {
-      alert('Seu carrinho está vazio!');
-      return;
-    }
-  
-    const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
-    alert(Compra finalizada! Total: R$ ${total},00);
-    carrinho = [];
-    atualizarCarrinho();
-  }
+
+  alert('Compra finalizada com sucesso!');
+  carrinho = []; // Limpa o carrinho
+  salvarCarrinho();
+  exibirCarrinho();
+}
+
+// Exibe o carrinho automaticamente ao carregar a página do carrinho
+if (window.location.pathname.endsWith('carrinho.html')) {
+  exibirCarrinho();
+}
