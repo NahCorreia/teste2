@@ -19,7 +19,7 @@ setInterval(mostrarSlides, 3000); // Troca de imagem a cada 3 segundos
 
 // Produtos e Carrinho
 const produtos = [
-  { id: 1, nome: 'Produto 1', preco: 100 },
+  { id: 1, nome: 'Produto 1', preco: 100, imagem: 'livro1.jpg' },
   { id: 2, nome: 'Produto 2', preco: 200 },
 ];
 
@@ -31,10 +31,51 @@ function adicionarAoCarrinho(id) {
   if (produto) {
     carrinho.push(produto); // Adiciona o produto ao carrinho
     salvarCarrinho();
-    alert('{livro} foi adicionado ao carrinho!');
+    alert('${livro} foi adicionado ao carrinho!');
   } else {
     alert('Produto não encontrado!');
   }
+  exibirCarrinho();
+}
+
+// Exibe o carrinho na página do carrinho
+function exibirCarrinho() {
+  const listaCarrinho = document.getElementById('itens-carrinho');
+  const totalElement = document.getElementById('total');
+
+  // Limpa a lista atual
+  listaCarrinho.innerHTML = '';
+
+  let total = 0;
+
+  carrinho.forEach((produto, index) => {
+    const item = document.createElement('li');
+    
+    // Cria o elemento de imagem
+    const img = document.createElement('img');
+    img.src = 'imagens/${produto.imagem}'; // Assume que a propriedade 'imagem' contém o nome do arquivo da imagem
+    img.alt = produto.nome;
+    img.style.width = '50px'; // Tamanho da imagem (ajuste conforme necessário)
+    img.style.marginRight = '10px'; // Espaçamento à direita da imagem
+
+    // Cria o texto com o nome e preço
+    const descricao = document.createElement('span');
+    descricao.textContent = '${produto.nome} - R$ ${produto.preco.toFixed(2)}';
+
+    // Cria o botão de remover
+    const botaoRemover = document.createElement('button');
+    botaoRemover.textContent = 'Remover';
+    botaoRemover.onclick = () => removerDoCarrinho(index);
+
+    item.appendChild(img); // Adiciona a imagem
+    item.appendChild(descricao); // Adiciona o nome e o preço
+    item.appendChild(botaoRemover); // Adiciona o botão de remover
+    listaCarrinho.appendChild(item); // Adiciona o item à lista
+
+    total += produto.preco; // Soma o preço ao total
+  });
+
+  totalElement.textContent = 'Total: R$ ${total.toFixed(2)}';
 }
 
 // Salva o carrinho no localStorage
